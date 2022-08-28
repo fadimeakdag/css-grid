@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100%;
+    color: white;
+    font-size: 1.5vw;
+    display: grid; /*display grid le başlıyoruz istediğimiz şekilde konumlandırmak için*/
+    grid-gap: 1vw; /*elementler arası boşlukları tanımlamamız için  Oluşturduğunuz sütun ve satırların aralarındaki boşlukları belirleyebilmeniz için grid-gap özelliğine değer atamanız gerekmektedir.*/
+    grid-template-columns: repeat(12, 1fr);/*stun ölçeklendirme kaç kolon olcaksa repeat deyip 3 kolono 200px verebiliriz fıregmınt fr 12 alanı eşit miktarda dagit 1 oranda */
+    grid-template-rows: 20vh 40vh 30vh 40vh 20vh;/*satır ölçeklendirme*/
+    grid-template-areas:         
+        "h h h h h h h h h h h h"
+        "b b b b b b b b b b s s"
+        "m m m m m m m m m m s s"
+        "m m m m m m m m m m s s"
+        "f f f f f f f f f f f f";
+
+       
+}
+
+
+header {
+    grid-area: h;
+    display: block; /*blok seklinde tanımlanacak*/
+    background-color: #4169e1;
+   
+}
+
+header p {
+       margin: 1%; /*yazı margini*/
+        
+       
+}
+
+.small {
+    grid-area: b;
+    display: flex;/*elemanlar bir satır boyunca yerleşebilsin diye*/
+    justify-content: space-between;
+} /*Öğeler esnek kutunun başına ve sonuna yaslanır ama diğer elemanlar arasında eşit boşluklar vardır. kutu aralarını*/
+.smallbox1, .smallbox2, .smallbox3 {
+    background-color: #4169e1;
+    width: 32%;
+    padding: 1%;
+
+}
+
+.sidebar {
+    padding: 5%;
+    grid-area: s;
+    background-color: #4169e1;
+}
+.maincontent {
+    padding: 1%;
+    grid-area: m;
+    background-color: #4169e1;
+}
+
+footer {
+    padding: 1%;
+    grid-area: f;
+    background-color: #4169e1;
+}
